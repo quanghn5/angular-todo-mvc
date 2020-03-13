@@ -1,3 +1,4 @@
+import { TodoService } from './../../services/todo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoInputComponent implements OnInit {
 
-  constructor() { }
+  todoContent: string = '';
+
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+  }
+  onSubmit() {
+    if(this.todoContent.trim() ==='') {
+      return false;
+    }
+
+    this.todoService.addTodo(this.todoContent);
+    this.todoContent ='';
   }
 
 }

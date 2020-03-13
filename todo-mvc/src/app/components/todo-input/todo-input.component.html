@@ -1,1 +1,8 @@
-<p>todo-input works!</p>
+<input 
+type="text" 
+class="w-100 h-100" 
+placeholder="What need to be done"
+[(ngModel)]="todoContent"
+(keyup.enter) ="onSubmit()"
+required
+>

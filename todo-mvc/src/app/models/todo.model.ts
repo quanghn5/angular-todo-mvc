@@ -11,6 +11,6 @@ constructor(id: number, content: string,) {
 constructor(
     public id: number,
     public content: string,
-    public isComplated: boolean = false,
+    public isCompleted: boolean = false,
 ) {}
 }
